@@ -1,6 +1,21 @@
-.container {
+body {
+    margin: 240px auto;
+}
+
+
+.wrapper {
     display: grid;
-    gap: 24px;
+    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 24px;
 }
 
 #gridArea {
@@ -11,17 +26,54 @@
     border: 1px solid black;
 }
 
-.actions {
+.cell {
+    border: 1px solid hsla(231,82%,7%,0.3);
+}
+
+.sizeBtn, .colorBtn {
+    background: linear-gradient(180deg, #FFF 0%, #F3F4F6 100%);;
+    display: block;
+    color: #1f2937;
+    box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.25) inset;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.sizeBtn:hover,
+.colorBtn:hover {
+    background-color: #e5e7eb;
+    transform: translateY(1px);
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.sizeBtn:active,
+.colorBtn:active {
+    background-color: #e5e7eb;
+    transform: translateY(1px);
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.actions,
+.colorButtons {
     width: 720px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
-.sizeBtn {
-     padding: 24px 12px;
-}
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-.cell {
-    border: 1px solid black;
+    #gridArea {
+        width: 320px;
+        height: 320px;
+    }
 }

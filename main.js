@@ -19,7 +19,7 @@ function createGrid (gridSize) {
 
     for (i=0; i<gridSize * gridSize; i++) {
         const cell = document.createElement("div");
-        cell.style.backgroundColor= "red";
+        cell.style.backgroundColor= "#111827";
 
         cell.className = "cell"
         cell.addEventListener("click", () => {
@@ -46,17 +46,13 @@ const buttons = Array.from(document.getElementsByClassName("sizeBtn"));
   createGrid(4);
 
   // pick color based on button
-  const colorBtn = document.getElementById("colorBtn");
+  const colorBtn = Array.from(document.getElementsByClassName("colorBtn"));
 
-  colorBtn.addEventListener("click", () => {
-    color = colorBtn.value;
-  })
+colorBtn.forEach((colorSelect) => {
+    colorSelect.addEventListener("click", () => {
+        color =  colorSelect.value;
+      })
+})
+
   
-    // pick color based on button
-    const raionbowBtn = document.getElementById("rainbow");
-
-    raionbowBtn.addEventListener("click", () => {
-      let rainbow = '#'+Math.floor(Math.random()*16777215).toString(16);
-      color = rainbow;
-    })
-    
+  

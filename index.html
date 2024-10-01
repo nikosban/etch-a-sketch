@@ -5,24 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link href="./styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
-    <div class="container">
-         <h1> Etch-a-Sketch</h1>
-         <div id="gridArea"></div>
-         <div class="actions">
-            <button class="sizeBtn" value="4">4x4</button>
-            <button class="sizeBtn" value="8">8x8</button>
-            <button class="sizeBtn" value="16">16x16</button>
-            <button class="sizeBtn" value="24">24x24</button>
-         </div>
-
-         
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+            <h1> Etch-a-Sketch</h1>
+             <p>Draw something from your imagination</p>
+            </div>
+             
+             
+             <div class="sizeSelection">
+                <h3>Select the grid size</h3>
+                <div class="actions">
+                    <button class="sizeBtn" value="4">4x4</button>
+                    <button class="sizeBtn" value="8">8x8</button>
+                    <button class="sizeBtn" value="16">16x16</button>
+                    <button class="sizeBtn" value="24">24x24</button>    
+                </div>
+             </div>
+             <div class="colorSelection">
+                <h3>Select your color</h3>
+                <div class="colorButtons">
+                    <button class="colorBtn" value="#16A34A"><span>
+                        <i class="ph-fill ph-circle"></i>
+                    </span>
+                    Red
+                    </button>
+                    <button class="colorBtn" value="#0284C7">Blue</button>
+                    <button class="colorBtn" value="#FBBF24">Amber</button>
+                    <button class="colorBtn" value="#DC2626">Red</button>    
+                </div>
+                
+             </div>
+        </div>
+    
+        <div id="gridArea"></div>
     </div>
-
-    <button id="colorBtn" value="#f59e0b">Black</button>
-    <button id="rainbow" value="#f59e0b">Rainbow</button>
+    
+  
     <script src="./main.js" ></script>
 </body>
 </html>
