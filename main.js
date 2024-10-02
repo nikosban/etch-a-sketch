@@ -2,7 +2,14 @@ let gridSize;
 let color;
 
 function randomColor() {
-  return "rgb(23,200, 100)"
+  
+   const maxRgbValue = 255;
+
+    const r = Math.floor(Math.random() * maxRgbValue);
+    const g = Math.floor(Math.random() * maxRgbValue);
+    const b = Math.floor(Math.random() * maxRgbValue);
+
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 // update the grid based on the selection
@@ -27,6 +34,7 @@ function createGrid (gridSize) {
 
         cell.className = "cell"
         cell.addEventListener("click", () => {
+
             if (color == "random") {
                cell.style.backgroundColor = randomColor() 
             } else {
