@@ -1,6 +1,10 @@
 let gridSize;
 let color;
 
+function randomColor() {
+  return "rgb(23,200, 100)"
+}
+
 // update the grid based on the selection
 function updateGrid(cellnumber) {
    
@@ -23,7 +27,11 @@ function createGrid (gridSize) {
 
         cell.className = "cell"
         cell.addEventListener("click", () => {
-            cell.style.backgroundColor= color;
+            if (color == "random") {
+               cell.style.backgroundColor = randomColor() 
+            } else {
+               cell.style.backgroundColor= color;
+            }
         })
         
 
